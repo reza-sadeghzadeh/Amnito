@@ -1,9 +1,12 @@
-import "./App.css";
+import Nav from "./conponents/navbar/Nav.js";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <h1>hello world</h1>
+      <Switch>
+        <Route path="" component={Nav} />
+      </Switch>
     </>
   );
 }
