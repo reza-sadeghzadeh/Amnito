@@ -11,9 +11,9 @@ export function SideBar({ navItems, menuOpen }) {
       animate={{
         left: menuOpen ? "0" : "-120%",
         transition: {
-          durataion: 1,
+          duration: 1,
           type: "spring",
-          damping: 20,
+          staggerChildren: 1,
         },
       }}
     >
@@ -34,9 +34,10 @@ export function SideBar({ navItems, menuOpen }) {
 }
 
 const Side = styled(motion.div)`
+  position: absolute;
   width: 100vw;
   height: calc(100vh - 80px);
-  position: absolute;
+  overflow: hidden;
   background-color: #111111;
 
   ul {
@@ -48,9 +49,24 @@ const Side = styled(motion.div)`
     flex-direction: column;
 
     li {
+      position: relative;
       color: #49d49d;
       padding: 2rem 0;
       list-style: none;
+
+      &::after {
+        content: "";
+        background-color: #49d49d;
+        left: 0;
+        width: 0%;
+        bottom: 10px;
+        transition: 0.2s ease all;
+        position: absolute;
+        height: 2px;
+      }
+      &:hover::after {
+        width: 100%;
+      }
     }
   }
   a {
@@ -58,6 +74,7 @@ const Side = styled(motion.div)`
     font-family: "shabnam-light";
     color: white;
     font-size: 2rem;
+
     display: inline - block;
     h1 {
       font-size: 2.2rem;

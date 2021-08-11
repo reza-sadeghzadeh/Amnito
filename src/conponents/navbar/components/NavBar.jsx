@@ -51,7 +51,6 @@ export const NavBar = ({ menuOpen, navItems, onMenuClick }) => {
               animate={{
                 transition: {
                   durataion: 0.5,
-                  // type: "spring",
                 },
                 rotate: menuOpen ? 45 : 0,
                 top: menuOpen ? -8 : 0,
@@ -141,15 +140,38 @@ const Nav = styled.nav`
           /* width: 300px; */
 
           a {
-            font-size: 1.3rem;
-            padding: 0 2rem;
+            display: inline-block;
+            font-size: 1.5rem;
+            font-family: "shabnam-light";
+            position: relative;
+            margin: 0 0.5rem;
+            padding: 1rem 1rem;
+
+            &::after {
+              content: "";
+              background-color: #49d49d;
+              left: 0;
+              width: 100%;
+              bottom: 0;
+              transition: 0.2s ease all;
+              position: absolute;
+              height: 0px;
+            }
+
+            &:hover::after {
+              height: 1px;
+            }
+
+            &.active {
+              border-bottom: 2px solid #49d49d;
+            }
           }
         }
 
         button {
           margin-left: 5rem;
           display: block;
-          padding: 0.4rem 1.6rem;
+          padding: 0.5rem 1.8rem;
           border-radius: 30px;
           border: none;
           outline: none;
@@ -160,7 +182,7 @@ const Nav = styled.nav`
           transition: 0.2s ease all;
 
           a {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-family: "shabnam-light";
           }
 
