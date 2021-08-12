@@ -4,18 +4,17 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export function SideBar({ navItems, menuOpen }) {
-  console.log(menuOpen);
-
   return (
     <Side
       animate={{
-        left: menuOpen ? "0" : "-120%",
+        x: menuOpen ? 0 : "100%",
         transition: {
           duration: 1,
           type: "spring",
           staggerChildren: 1,
         },
       }}
+      initial={{ x: "100%" }}
     >
       <ul>
         {navItems.map((item) => (
@@ -35,6 +34,7 @@ export function SideBar({ navItems, menuOpen }) {
 
 const Side = styled(motion.div)`
   position: absolute;
+
   width: 100vw;
   height: calc(100vh - 80px);
   overflow: hidden;
