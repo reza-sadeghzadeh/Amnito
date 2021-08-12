@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavBar } from "./components/NavBar";
 import { SideBar } from "./components/SideBar";
+import styled from "styled-components";
 
 export default function Nav() {
   const [menuOpen, setmenuOpen] = useState(false);
@@ -23,7 +24,6 @@ export default function Nav() {
         onMenuClick={handleMenuClick}
         navItems={navItems}
       />
-      <SideBar menuOpen={menuOpen} navItems={navItems} />
     </>
   );
 }

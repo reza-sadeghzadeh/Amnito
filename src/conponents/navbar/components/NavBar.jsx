@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { SideBar } from "./SideBar";
 import { motion } from "framer-motion";
 
 export const NavBar = ({ menuOpen, navItems, onMenuClick }) => {
   return (
     <>
       <Nav>
+        <SideBar menuOpen={menuOpen} navItems={navItems} />
         <div className="container">
           <Link to="/">
             <h1>امنیتو</h1>
@@ -68,6 +70,11 @@ const Nav = styled.nav`
   height: 80px;
   width: 100vw;
   background-color: #1b1b1b;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  /* shadow should change in the future */
+  box-shadow: 0 0 4px 1px #5a5a5a;
 
   .container {
     display: flex;
