@@ -20,3 +20,35 @@ html {
 body {
   overflow-x: hidden;
 }
+
+.btn {
+  margin-left: 5rem;
+  display: block;
+  padding: 0.5rem 1.8rem;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: vazir;
+  border: 1px solid #49d49d;
+  cursor: pointer;
+  transition: 0.2s ease all;
+  color: white;
+  z-index: 1;
+}
+
+.btn:hover {
+  border: 1px solid #49d49d;
+  color: white;
+  background-color: #49d49d;
+}
+.btn:hover a {
+  color: white;
+}
+.btn > a {
+  font-size: 1.5rem;
+  font-family: vazir;
+  font-weight: 100;
+  text-decoration: none;
+  color: white;
+}

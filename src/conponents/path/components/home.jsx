@@ -1,19 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 import Matrix from "./Matrix";
+import { motion } from "framer-motion";
+import logo from "../../../images/logo.svg";
+import Banner from "./Banner";
 
 export default function Home() {
   return (
     <Div>
-      {/* <Matrix count={50} /> */}
-      <div className="banner">
-        <h1>تجربه واقعی</h1>
-        <span>
-          11011000 10100111 11011001 10000101 11011001 10000110 11011011
-          10001100 11011000 10101010
-        </span>
-        <h2>حتی در دنیای مجازی</h2>
-      </div>
+      <Matrix count={25} />
+      <Banner />
+      <motion.div
+        animate={{
+          y: 0,
+          rotate: 0,
+          opacity: 1,
+          transition: {
+            duration: 1,
+          },
+        }}
+        initial={{
+          opacity: 0,
+          y: 150,
+          rotate: 180,
+        }}
+        className="hero-image"
+      >
+        <img src={logo} alt="" />
+      </motion.div>
     </Div>
   );
 }
@@ -24,44 +38,41 @@ const Div = styled.div`
   height: calc(100vh - 80px);
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
 
-  .banner {
-    /* background-color: white; */
-    width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-direction: column;
-    height: 300px;
-    border-radius: 10px;
-    z-index: 1;
-    font-family: "shabnam-light";
+  .hero-image {
+    display: none;
+  }
 
-    h1 {
-      color: #ff5757;
-      font-size: 4rem;
+  @media screen and (min-width: 750px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    /* background-color: red; */
+
+    .hero-image {
+      height: 100%;
+      display: block;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      z-index: 5;
+      background-image: url(logo);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      img {
+        width: clamp(100px, 50%, 300px);
+        height: 100%;
+      }
     }
-    span {
-      font-size: 1.2rem;
-      /* display: inline-block; */
-      color: white;
-      margin: 1rem 0rem;
-    }
-    h2 {
-      color: white;
-      font-size: 2rem;
-
-      /* display: inline-block; */
-
-      /* span {
-        color: #06ff44ba;
-      } */
-    }
+  }
+  @media screen and (min-width: 1400px) {
+    width: 1400px;
   }
 `;

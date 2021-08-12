@@ -73,16 +73,16 @@ const Side = styled(motion.div)`
     text-decoration: none;
     font-family: vazir;
     font-weight: 100;
-
     color: white;
     font-size: 2rem;
-
     display: inline - block;
+
     h1 {
       font-size: 2.2rem;
       position: relative;
     }
   }
+
   button {
     margin: auto;
     display: block;
@@ -104,5 +104,6 @@ const Side = styled(motion.div)`
   }
   @media screen and (min-width: 650px) {
     display: none;
+    background-color: red;
   }
 `;
