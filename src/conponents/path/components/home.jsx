@@ -1,45 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
-import _ from "lodash";
+import Matrix from "./Matrix";
 
 export default function Home() {
   return (
     <Div>
-      {_.range(0, 100).map((item) => (
-        <motion.svg
-          key={item}
-          xmlns="http://www.w3.org/2000/svg"
-          width="0.5"
-          height="1045.843"
-          viewBox="0 0 0.5 1045.843"
-        >
-          <motion.path
-            key={item}
-            animate={{
-              pathLength: Math.random() * 0.3 + 0.6,
-              opacity: [1, Math.random(), Math.random(), 0],
-              transition: {
-                delay: Math.random() * 1 + Math.random() * 2,
-                repeat: Infinity,
-                repeatDelay: Math.random() * 1 + 1,
-                duration: Math.random() * 2 + 2,
-              },
-            }}
-            initial={{
-              left: 100,
-              pathLength: 0,
-            }}
-            id="Path_1"
-            data-name="Path 1"
-            d="M757.777,0V1045.843"
-            transform="translate(-757.527)"
-            fill="none"
-            stroke="#00ff08"
-            stroke-width="0.5"
-          />
-        </motion.svg>
-      ))}
+      {/* <Matrix count={50} /> */}
+      <div className="banner">
+        <h1>تجربه واقعی</h1>
+        <span>
+          11011000 10100111 11011001 10000101 11011001 10000110 11011011
+          10001100 11011000 10101010
+        </span>
+        <h2>حتی در دنیای مجازی</h2>
+      </div>
     </Div>
   );
 }
@@ -49,7 +23,7 @@ const Div = styled.div`
   width: 100vw;
   height: calc(100vh - 80px);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   overflow: hidden;
   position: relative;
@@ -57,11 +31,37 @@ const Div = styled.div`
   align-items: center;
   justify-content: space-around;
 
-  svg {
-    /* position: absolute; */
+  .banner {
+    /* background-color: white; */
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    height: 300px;
+    border-radius: 10px;
+    z-index: 1;
+    font-family: "shabnam-light";
 
-    path {
-      /* position: absolute; */
+    h1 {
+      color: #ff5757;
+      font-size: 4rem;
+    }
+    span {
+      font-size: 1.2rem;
+      /* display: inline-block; */
+      color: white;
+      margin: 1rem 0rem;
+    }
+    h2 {
+      color: white;
+      font-size: 2rem;
+
+      /* display: inline-block; */
+
+      /* span {
+        color: #06ff44ba;
+      } */
     }
   }
 `;

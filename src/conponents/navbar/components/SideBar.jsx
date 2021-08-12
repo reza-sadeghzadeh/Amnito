@@ -34,7 +34,7 @@ export function SideBar({ navItems, menuOpen }) {
 
 const Side = styled(motion.div)`
   position: absolute;
-
+  z-index: 5;
   width: 100vw;
   height: calc(100vh - 80px);
   overflow: hidden;
@@ -71,7 +71,9 @@ const Side = styled(motion.div)`
   }
   a {
     text-decoration: none;
-    font-family: "shabnam-light";
+    font-family: vazir;
+    font-weight: 100;
+
     color: white;
     font-size: 2rem;
 
@@ -89,10 +91,11 @@ const Side = styled(motion.div)`
     border: none;
     outline: none;
     background-color: #49d49d;
-    font-family: "shabnam-light";
+    font-family: vazir;
     border: 1px solid #49d49d;
     cursor: pointer;
     transition: 0.2s ease all;
+
     :hover {
       border: 1px solid #49d49d;
       color: white;

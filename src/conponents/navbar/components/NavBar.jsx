@@ -84,11 +84,13 @@ const Nav = styled.nav`
 
     a {
       text-decoration: none;
-      font-family: "shabnam-light";
+      font-family: vazir;
+
       color: white;
       font-size: 2rem;
       display: inline - block;
       h1 {
+        font-weight: 600;
         font-size: 2.2rem;
         position: relative;
       }
@@ -142,7 +144,8 @@ const Nav = styled.nav`
           a {
             display: inline-block;
             font-size: 1.5rem;
-            font-family: "shabnam-light";
+            font-weight: 100;
+            font-family: vazir;
             position: relative;
             margin: 0 0.5rem;
             padding: 1rem 1rem;
@@ -176,14 +179,15 @@ const Nav = styled.nav`
           border: none;
           outline: none;
           background-color: #49d49d;
-          font-family: "shabnam-light";
+          font-family: vazir;
           border: 1px solid #49d49d;
           cursor: pointer;
           transition: 0.2s ease all;
 
           a {
             font-size: 1.5rem;
-            font-family: "shabnam-light";
+            font-family: vazir;
+            font-weight: 100;
           }
 
           :hover {

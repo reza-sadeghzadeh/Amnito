@@ -1,21 +1,8 @@
 /* importing the fonts */
 @font-face {
-  font-family: "shabnam-medium";
-  src: url("./fonts/Shabnam-Bold.woff2") format("woff2");
-  weight: normal;
+  font-family: vazir;
+  src: url("./fonts/Vazir-Variable.woff2") format("woff2");
   font-style: normal;
-}
-@font-face {
-  font-family: "shabnam-bold";
-  src: url("./fonts/Shabnam-Medium.woff2") format("woff2");
-  font-style: normal;
-  weight: normal;
-}
-@font-face {
-  font-family: "shabnam-light";
-  src: url("./fonts/Shabnam-Light.woff2") format("woff2");
-  font-style: normal;
-  weight: normal;
 }
 
 /* global styles */
@@ -24,7 +11,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "shabnam-Light";
+  font-family: vazir;
   font-weight: bold;
 }
 html {
