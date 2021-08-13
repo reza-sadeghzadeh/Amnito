@@ -27,8 +27,8 @@ const Cardd = styled.div`
   align-items: flex-end;
   flex-direction: column;
   text-align: right;
-  border-radius: 20px;
-  margin: 2rem 2rem 3rem 0;
+  border-radius: 10px;
+  margin: 1rem 2rem 3rem 0;
 
   svg {
     margin: 4rem 0;

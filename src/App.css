@@ -18,8 +18,20 @@
   scrollbar-gutter: #1b1b1b;
 }
 *::selection {
-  background-color: #6fff63;
-  color: lightcoral;
+  background-color: #1b1b1b;
+  color: #fff;
+}
+*::-webkit-scrollbar-track {
+  width: 20px;
+}
+*::-webkit-scrollbar-thumb {
+  width: 1px;
+  background-color: #cecece;
+  border-radius: 5px;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f0f0f0;
 }
 html {
   font-size: 62.5%;
@@ -58,4 +70,7 @@ body {
   font-weight: 100;
   text-decoration: none;
   color: white;
+}
+span {
+  color: lightcoral;
 }

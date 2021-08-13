@@ -39,6 +39,7 @@ const Cont = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 2rem 0;
 
   @media screen and (min-width: 1000px) {
     flex-direction: row;

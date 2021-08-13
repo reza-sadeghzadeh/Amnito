@@ -20,6 +20,7 @@ const Div = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  margin-top: 3rem;
 
   h1 {
     font-size: 3rem;
