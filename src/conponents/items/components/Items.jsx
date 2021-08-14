@@ -10,9 +10,7 @@ export default function Items() {
   // const element = [];
   const [element0, view0] = useInView({ threshold: 0.1 });
 
-  console.log(view0);
   if (view0) {
-    console.log("scsc");
     control.start({
       opacity: 1,
       transition: {
@@ -35,19 +33,19 @@ export default function Items() {
       header: "سریع",
       src: `${items}#undraw_Outer_space_drqu`,
       detail:
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از ",
+        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و ",
     },
     {
       header: "امن",
       src: `${items}#undraw_Security_on_re_e491`,
       detail:
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از ",
+        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و ",
     },
     {
       header: "به صرفه",
       src: `${items}#undraw_Investing_re_bov7`,
       detail:
-        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از ",
+        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و ",
     },
   ];
 
@@ -77,11 +75,12 @@ const Cont = styled(motion.div)`
 
     .card {
       border: 1px solid #c5c5c5;
-      width: clamp(330px, 25%, 350px);
+      width: 300px;
       align-items: flex-end;
 
       P {
         text-align: right;
+        margin: 1rem 2rem 3rem 0;
       }
 
       :hover {

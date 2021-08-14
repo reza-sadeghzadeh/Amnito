@@ -58,7 +58,7 @@ const Div = styled.div`
 
   .holder {
     position: relative;
-    width: clamp(400px, 80%, 650px);
+    width: clamp(300px, 80%, 650px);
     color: #1b1b1b;
     background-color: #f8f8f8;
     border-radius: 15px;
@@ -66,13 +66,20 @@ const Div = styled.div`
     padding: 3.5rem 3rem;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-end;
     flex-direction: column;
 
     h3 {
       font-weight: 100;
       font-size: 1.5rem;
       margin: 0 0 2rem 0;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
     }
 
     .quote {
@@ -97,12 +104,13 @@ const Div = styled.div`
       justify-content: flex-start;
       align-items: center;
       flex-direction: row-reverse;
+      margin-top: 1rem;
 
       .info__info {
         flex-direction: column;
         font-weight: 100;
         h4 {
-          font-weight: 100;
+          font-weight: 200;
           font-size: 1.4rem;
         }
         p {

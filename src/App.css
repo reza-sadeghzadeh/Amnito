@@ -14,9 +14,9 @@
   margin: 0;
   font-family: vazir;
   font-weight: bold;
-  scrollbar-width: thin;
+  /* scrollbar-width: thin;
   scrollbar-color: #1b1b1b;
-  scrollbar-gutter: #1b1b1b;
+  scrollbar-gutter: #1b1b1b; */
   /* overflow-x: hidden; */
 }
 
@@ -24,17 +24,16 @@
   background-color: #1b1b1b;
   color: #fff;
 }
-*::-webkit-scrollbar-track {
+/* *::-webkit-scrollbar-track {
   width: 20px;
 }
 *::-webkit-scrollbar-thumb {
   width: 1px;
   background-color: #cecece;
   border-radius: 5px;
-}
+}*/
 *::-webkit-scrollbar {
-  width: 10px;
-  background-color: #f0f0f0;
+  display: none;
 }
 html {
   font-size: 62.5%;

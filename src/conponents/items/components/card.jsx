@@ -20,18 +20,18 @@ export default function Card({ info }) {
 const Cardd = styled.div`
   background-color: transparent;
   border: none;
-  width: 60vw;
-  height: 400px;
+  width: 80vw;
+  /* height: 400px; */
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   text-align: right;
   border-radius: 10px;
-  margin: 1rem 2rem 3rem 0;
+  margin: 2rem 2rem 7rem 0;
 
   svg {
-    margin: 4rem 0;
+    margin: 2rem 0;
   }
 
   h2 {
@@ -39,7 +39,7 @@ const Cardd = styled.div`
     margin: 1rem 2rem;
   }
   P {
-    margin: 1rem 2rem;
+    margin: 1rem 0rem;
     font-size: 1.3rem;
     font-weight: 100;
     text-align: center;

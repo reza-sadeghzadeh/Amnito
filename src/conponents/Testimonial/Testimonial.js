@@ -28,11 +28,11 @@ export default function Testimonial() {
           },
         });
       }
-    }, 4000);
+    }, 5000);
     return () => {
       clearTimeout(next);
     };
-  }, [currentTestIndex]);
+  }, []);
 
   const tests = [
     {
@@ -82,7 +82,6 @@ export default function Testimonial() {
       });
     }
   };
-  console.log(currentTestIndex);
 
   return (
     <Div>
@@ -98,7 +97,7 @@ export default function Testimonial() {
   );
 }
 const Div = styled.div`
-  margin: 3rem 0 5rem 0;
+  margin: 2rem 0 5rem 0;
   height: 40vh;
   display: flex;
   justify-content: center;
