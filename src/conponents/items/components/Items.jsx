@@ -2,8 +2,34 @@ import React from "react";
 import Card from "./card";
 import items from "../../../images/items.svg";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
 
 export default function Items() {
+  const control = useAnimation();
+  // const element = [];
+  const [element0, view0] = useInView({ threshold: 0.1 });
+
+  console.log(view0);
+  if (view0) {
+    console.log("scsc");
+    control.start({
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        // type: 'spring'
+      },
+    });
+  } else {
+    control.start({
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        // type: 'spring'
+      },
+    });
+  }
+
   const info = [
     {
       header: "سریع",
@@ -27,14 +53,19 @@ export default function Items() {
 
   return (
     <>
-      <Cont className="container">
+      <Cont
+        animate={control}
+        initial={{ opacity: 0.0 }}
+        ref={element0}
+        className="container"
+      >
         <Card info={info} />
       </Cont>
     </>
   );
 }
 
-const Cont = styled.div`
+const Cont = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;

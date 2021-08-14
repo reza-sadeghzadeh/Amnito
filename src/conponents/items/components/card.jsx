@@ -4,8 +4,8 @@ import styled from "styled-components";
 export default function Card({ info }) {
   return (
     <>
-      {info.map((i) => (
-        <Cardd key={i} className="card">
+      {info.map((i, index) => (
+        <Cardd key={index} className="card">
           <svg class="icon">
             <use href={i.src}></use>
           </svg>
@@ -20,7 +20,7 @@ export default function Card({ info }) {
 const Cardd = styled.div`
   background-color: transparent;
   border: 1px solid #c5c5c5;
-  width: 300px;
+  width: 350px;
   height: 400px;
   display: flex;
   justify-content: flex-start;
