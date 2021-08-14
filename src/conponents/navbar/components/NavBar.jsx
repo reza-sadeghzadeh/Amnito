@@ -75,6 +75,7 @@ const Nav = styled.nav`
   z-index: 10;
   /* shadow should change in the future */
   box-shadow: 0 0 4px 1px #5a5a5a;
+  /* overflow-x: hidden; */
 
   .container {
     display: flex;

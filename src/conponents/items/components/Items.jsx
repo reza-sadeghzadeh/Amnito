@@ -72,7 +72,21 @@ const Cont = styled(motion.div)`
   flex-direction: column;
   margin: 2rem 0;
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1050px) {
     flex-direction: row;
+
+    .card {
+      border: 1px solid #c5c5c5;
+      width: clamp(330px, 25%, 350px);
+      align-items: flex-end;
+
+      P {
+        text-align: right;
+      }
+
+      :hover {
+        box-shadow: 0px 0px 5px 2px #dbdbdb;
+      }
+    }
   }
 `;

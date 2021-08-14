@@ -8,12 +8,12 @@ import Testimonial from "./conponents/Testimonial/Testimonial";
 function App() {
   return (
     <>
-      {/* <Nav />
+      <Nav />
       <Switch>
         <Route path="" component={HomePage} />
       </Switch>
       <TwoSide />
-      <Item /> */}
+      <Item />
       <Testimonial />
     </>
   );

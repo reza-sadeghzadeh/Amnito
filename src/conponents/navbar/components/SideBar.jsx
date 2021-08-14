@@ -8,6 +8,7 @@ export function SideBar({ navItems, menuOpen }) {
     <Side
       animate={{
         x: menuOpen ? 0 : "100%",
+        // display: menuOpen ? "block" : "none",
         transition: {
           duration: 1,
           type: "spring",
@@ -38,7 +39,7 @@ const Side = styled(motion.div)`
   z-index: 9;
   width: 100vw;
   height: calc(100vh - 80px);
-  overflow: hidden;
+
   background-color: #111111;
 
   ul {

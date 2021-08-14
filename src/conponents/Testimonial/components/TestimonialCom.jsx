@@ -1,31 +1,50 @@
 import React from "react";
 import styled from "styled-components";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import image from "../../../images/85053105-82ca-49c9-8974-d3067829baab.jpg";
+import { FaQuoteRight, FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
-export default function TestimonialCom() {
-  const IconStyle = { color: "red " };
+export default function TestimonialCom({
+  currentTestIndex,
+  test,
+  controlAnimation,
+  onNext,
+  onPrev,
+  testsLength,
+}) {
   return (
     <Div>
       <div className="holder">
-        <h3>
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-          استفاده از طراحان گرافیک است، چاپگرها ولورم ایپسوم ز صنعت چاپ، و با
-          استفاده از طراحان گرافیک است، چاپگرها ولورم ایپسوم متن ساختگی با تولید
-          سادگی نامفهوم از صنعت
-        </h3>
-        <div className="info">
-          <img src={image} alt="face" className="photo" />
-          <div className="info__info">
-            <h4>پیمان </h4>
-            <p>مهندس سازه در دیتاسنترسیتی</p>
+        <motion.div layout animate={controlAnimation} className="content">
+          <h3>{test.detail}</h3>
+          <div className="info">
+            <img src={test.src} alt="face" className="photo" />
+            <div className="info__info">
+              <h4>{test.name} </h4>
+              <p>{test.poss}</p>
+            </div>
           </div>
-        </div>
-        <div className="next">
+        </motion.div>
+        <div
+          style={{
+            cursor:
+              currentTestIndex === testsLength - 1 ? "not-allowed" : "pointer",
+          }}
+          onClick={(e) => onNext(e)}
+          className="next"
+        >
           <FaArrowRight color="white" size="1.2rem" />
         </div>
-        <div className="pre">
+        <div
+          style={{
+            cursor: currentTestIndex === 0 ? "not-allowed" : "pointer",
+          }}
+          onClick={(e) => onPrev(e)}
+          className="pre"
+        >
           <FaArrowLeft color="white" size="1.2rem" />
+        </div>
+        <div className="quote">
+          <FaQuoteRight />
         </div>
       </div>
     </Div>
@@ -36,14 +55,13 @@ const Div = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3rem 0;
 
   .holder {
     position: relative;
-    width: clamp(400px, 80%, 700px);
+    width: clamp(400px, 80%, 650px);
     color: #1b1b1b;
     background-color: #f8f8f8;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: right;
     padding: 3.5rem 3rem;
     display: flex;
@@ -52,9 +70,25 @@ const Div = styled.div`
     flex-direction: column;
 
     h3 {
-      font-weight: 200;
-      font-size: 1.6rem;
+      font-weight: 100;
+      font-size: 1.5rem;
       margin: 0 0 2rem 0;
+    }
+
+    .quote {
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      height: 50px;
+      position: absolute;
+      line-height: 0;
+      border-radius: 50%;
+      top: -25px;
+      color: #1b1b1b;
+      font-size: 3rem;
+      background-color: #fff;
     }
 
     .info {
@@ -98,11 +132,6 @@ const Div = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-
-      p {
-        font-size: 1.8rem;
-        color: white;
-      }
     }
     .pre {
       right: unset;

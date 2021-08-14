@@ -19,12 +19,12 @@ export default function Card({ info }) {
 
 const Cardd = styled.div`
   background-color: transparent;
-  border: 1px solid #c5c5c5;
-  width: 350px;
+  border: none;
+  width: 60vw;
   height: 400px;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
   flex-direction: column;
   text-align: right;
   border-radius: 10px;
@@ -42,11 +42,8 @@ const Cardd = styled.div`
     margin: 1rem 2rem;
     font-size: 1.3rem;
     font-weight: 100;
+    text-align: center;
   }
 
   transition: 0.2s ease all;
-
-  :hover {
-    box-shadow: 0px 0px 5px 2px #dbdbdb;
-  }
 `;

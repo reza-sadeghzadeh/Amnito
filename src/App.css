@@ -17,7 +17,9 @@
   scrollbar-width: thin;
   scrollbar-color: #1b1b1b;
   scrollbar-gutter: #1b1b1b;
+  /* overflow-x: hidden; */
 }
+
 *::selection {
   background-color: #1b1b1b;
   color: #fff;
