@@ -32,7 +32,7 @@ export default function Testimonial() {
     return () => {
       clearTimeout(next);
     };
-  }, []);
+  }, [currentTestIndex]);
 
   const tests = [
     {
