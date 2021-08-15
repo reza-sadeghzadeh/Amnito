@@ -5,13 +5,21 @@ import { SideBar } from "./SideBar";
 import { motion } from "framer-motion";
 
 export const NavBar = ({ menuOpen, navItems, onMenuClick }) => {
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      behavior: "smooth",
+      top: 0,
+      left: 0,
+    });
+  };
+
   return (
     <>
       <Nav>
         <SideBar menuOpen={menuOpen} navItems={navItems} />
         <div className="container">
           <Link to="/">
-            <h1>امنیتو</h1>
+            <h1 onClick={handleScrollToTop}>امنیتو</h1>
           </Link>
           <div className="item-holder">
             <ul>

@@ -28,7 +28,7 @@ const Div = styled.div`
   background-color: #111;
   /* height: 50vh; */
   margin-top: 8rem;
-  padding: 3rem 0;
+  padding-top: 3rem;
 
   .holder {
     display: flex;
