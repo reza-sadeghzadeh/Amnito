@@ -18,9 +18,7 @@ export const NavBar = ({ menuOpen, navItems, onMenuClick }) => {
       <Nav>
         <SideBar menuOpen={menuOpen} navItems={navItems} />
         <div className="container">
-          <Link to="/">
-            <h1 onClick={handleScrollToTop}>امنیتو</h1>
-          </Link>
+          <h1 onClick={handleScrollToTop}>امنیتو</h1>
           <div className="item-holder">
             <ul>
               {navItems.map((item) => (
@@ -94,6 +92,13 @@ const Nav = styled.nav`
     transition: 0.2s ease all;
     color: white;
 
+    h1 {
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 2.2rem;
+      position: relative;
+    }
+
     .item-holder {
       display: none;
     }
@@ -105,11 +110,6 @@ const Nav = styled.nav`
       color: white;
       font-size: 2rem;
       display: inline - block;
-      h1 {
-        font-weight: 600;
-        font-size: 2.2rem;
-        position: relative;
-      }
     }
 
     .humberger-menu {
