@@ -8,31 +8,8 @@ import styled from "styled-components";
 
 export default function Testimonial() {
   const [currentTestIndex, setCurrentTestIndex] = useState(1);
-  useEffect(() => {
-    const next = setTimeout(() => {
-      if (currentTestIndex === tests.length - 1) {
-        setCurrentTestIndex(0);
-        control.start({
-          opacity: [0, 1],
-          transition: {
-            duration: 0.5,
-          },
-        });
-      }
-      if (currentTestIndex < tests.length - 1) {
-        setCurrentTestIndex(currentTestIndex + 1);
-        control.start({
-          opacity: [0, 1],
-          transition: {
-            duration: 0.5,
-          },
-        });
-      }
-    }, 5000);
-    return () => {
-      clearTimeout(next);
-    };
-  }, [currentTestIndex]);
+
+  const control = useAnimation();
 
   const tests = [
     {
@@ -57,8 +34,6 @@ export default function Testimonial() {
       poss: "توسعه دهنده در راد اپ آرمان",
     },
   ];
-
-  const control = useAnimation();
 
   const handleNextOne = (e) => {
     if (currentTestIndex < tests.length - 1) {
@@ -86,12 +61,14 @@ export default function Testimonial() {
   return (
     <Div>
       <TestimonialCom
-        controlAnimation={control}
         currentTestIndex={currentTestIndex}
         testsLength={tests.length}
         test={tests[currentTestIndex]}
         onNext={handleNextOne}
         onPrev={handlePrevOne}
+        testimonialsLength={tests.length}
+        setCurrentTestIndex={setCurrentTestIndex}
+        control={control}
       />
     </Div>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { FaQuoteRight, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -6,15 +6,43 @@ import { motion } from "framer-motion";
 export default function TestimonialCom({
   currentTestIndex,
   test,
-  controlAnimation,
+  control,
   onNext,
+  testimonialsLength,
+  setCurrentTestIndex,
   onPrev,
   testsLength,
 }) {
+  useEffect(() => {
+    const next = setTimeout(() => {
+      if (currentTestIndex === testimonialsLength - 1) {
+        setCurrentTestIndex(0);
+        control.start({
+          opacity: [0, 1],
+          transition: {
+            duration: 0.5,
+          },
+        });
+      }
+      if (currentTestIndex < testimonialsLength - 1) {
+        setCurrentTestIndex(currentTestIndex + 1);
+        control.start({
+          opacity: [0, 1],
+          transition: {
+            duration: 0.5,
+          },
+        });
+      }
+    }, 5000);
+    return () => {
+      clearTimeout(next);
+    };
+  }, [currentTestIndex]);
+
   return (
     <Div>
       <div className="holder">
-        <motion.div layout animate={controlAnimation} className="content">
+        <motion.div layout animate={control} className="content">
           <h3>{test.detail}</h3>
           <div className="info">
             <img src={test.src} alt="face" className="photo" />
