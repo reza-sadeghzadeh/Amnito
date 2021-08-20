@@ -5,18 +5,20 @@ import Item from "./conponents/items/Item";
 import TwoSide from "./conponents/twoSide/TwoSide";
 import Testimonial from "./conponents/Testimonial/Testimonial";
 import Footer from "./conponents/Footer/Footer";
+import Form from "./conponents/form/Form";
 
 function App() {
   return (
     <>
-      <Nav />
+      {/* <Nav />
       <Switch>
         <Route path="" component={HomePage} />
       </Switch>
       <TwoSide />
       <Item />
       <Testimonial />
-      <Footer />
+      <Footer /> */}
+      <Form />
     </>
   );
 }
