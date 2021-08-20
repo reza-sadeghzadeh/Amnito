@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Input from "./components/input";
 
-const Form = () => {
+const Form = ({ history }) => {
   return (
     <Div>
       <div className="holder">
@@ -14,7 +14,7 @@ const Form = () => {
           placeholder=" رمز عبور "
           type="password"
         />
-        <button>ورود</button>
+        <button onClick={() => history.replace("/dashboard")}>ورود</button>
       </div>
     </Div>
   );

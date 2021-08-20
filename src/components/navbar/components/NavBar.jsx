@@ -30,7 +30,7 @@ export const NavBar = ({ menuOpen, navItems, onMenuClick }) => {
               ))}
             </ul>
             <button>
-              <Link to="/services">خدمات</Link>
+              <Link to="/login">ورود</Link>
             </button>
           </div>
           <div onClick={onMenuClick} className="humberger-menu">

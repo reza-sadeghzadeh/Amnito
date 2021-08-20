@@ -1,24 +1,19 @@
-import Nav from "./conponents/navbar/Nav.js";
-import { Switch, Route } from "react-router-dom";
-import HomePage from "./conponents/path/home.js";
-import Item from "./conponents/items/Item";
-import TwoSide from "./conponents/twoSide/TwoSide";
-import Testimonial from "./conponents/Testimonial/Testimonial";
-import Footer from "./conponents/Footer/Footer";
-import Form from "./conponents/form/Form";
+import Nav from "./components/navbar/Nav.js";
+import { Switch, Route, Redirect } from "react-router-dom";
+import Form from "./components/form/Form";
+import NotFound from "./pages/not-found/NotFound";
+import Main from "./pages/main";
 
 function App() {
   return (
     <>
-      {/* <Nav />
+      <Nav />
       <Switch>
-        <Route path="" component={HomePage} />
+        <Route path="/login" component={Form} />
+        <Route path="/not-found" exact component={NotFound} />
+        <Route path="/" exact component={Main} />
+        <Redirect to="/not-found" />
       </Switch>
-      <TwoSide />
-      <Item />
-      <Testimonial />
-      <Footer /> */}
-      <Form />
     </>
   );
 }
