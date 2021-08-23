@@ -86,7 +86,7 @@ const Nav = styled.nav`
   background-color: #1b1b1b;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 200;
   /* shadow should change in the future */
   box-shadow: 0 0 4px 1px #5a5a5a;
   /* overflow-x: hidden; */

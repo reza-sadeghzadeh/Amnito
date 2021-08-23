@@ -47,12 +47,12 @@ body {
   margin-left: 5rem;
   display: block;
   padding: 0.5rem 1.8rem;
-  border-radius: 30px;
+  border-radius: 10px;
   border: none;
   outline: none;
   background-color: transparent;
   font-family: vazir;
-  border: 1px solid #49d49d;
+  border: 1px solid #1b1b1b;
   cursor: pointer;
   transition: 0.2s ease all;
   color: white;
@@ -60,9 +60,8 @@ body {
 }
 
 .btn:hover {
-  border: 1px solid #49d49d;
+  border: 1px solid #00ff08;
   color: white;
-  background-color: #49d49d;
 }
 .btn:hover a {
   color: white;
@@ -76,4 +75,14 @@ body {
 }
 span {
   color: lightcoral;
+}
+.form {
+  direction: rtl;
+  width: 100vw;
+  height: calc(100vh - 140px);
+  overflow: hidden;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

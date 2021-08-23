@@ -36,7 +36,7 @@ export function SideBar({ navItems, menuOpen }) {
 const Side = styled(motion.div)`
   position: absolute;
   top: 80px;
-  z-index: 9;
+  z-index: 200;
   width: 100vw;
   height: calc(100vh - 80px);
 
