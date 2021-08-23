@@ -70,6 +70,10 @@ const Cont = styled(motion.div)`
   flex-direction: column;
   margin: 2rem 0;
 
+  @media screen and (min-width: 1400px) {
+    width: 1400px;
+  }
+
   @media screen and (min-width: 1050px) {
     flex-direction: row;
 

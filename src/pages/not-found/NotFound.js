@@ -2,12 +2,20 @@ import React from "react";
 import notFoundImage from "../../images/not-found.png";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const NotFound = ({ history }) => {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    history.replace("/");
+    dispatch({ type: "IN_HOME" });
+  };
+
   return (
     <Div>
       <h1> !یافت نشد </h1>
-      <Link onClick={() => history.replace("/")}> بازگشت به خانه</Link>
+      <Link onClick={handleClick}> بازگشت به خانه</Link>
       <img src={notFoundImage} alt="not found image" />
     </Div>
   );

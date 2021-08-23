@@ -58,9 +58,11 @@ const Div = styled(motion.div)`
   flex-direction: column;
   z-index: 1;
   font-family: "shabnam-light";
+  z-index: 150;
   height: 100%;
 
   h1 {
+    z-index: 150;
     span {
       color: #f05d5e;
       font-size: 4.5rem;
@@ -76,11 +78,13 @@ const Div = styled(motion.div)`
   p {
     color: white;
     font-size: 1.3rem;
+    z-index: 150;
     font-weight: 100;
     padding: 0 0 0 3rem;
     text-align: right;
   }
   button {
+    z-index: 150;
     margin: 2rem 0;
   }
   @media screen and (min-width: 750px) {

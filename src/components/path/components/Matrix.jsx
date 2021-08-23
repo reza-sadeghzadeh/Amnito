@@ -50,6 +50,6 @@ const MartixContainer = styled.div`
   align-items: flex-start;
   width: 100%;
   position: absolute;
-  top: -50px;
-  z-index: 0;
+  top: 0;
+  z-index: 50;
 `;

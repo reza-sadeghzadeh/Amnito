@@ -20,15 +20,15 @@ export default function Card({ info }) {
 const Cardd = styled.div`
   background-color: transparent;
   border: none;
-  width: 80vw;
-  /* height: 400px; */
+  /* width: 80vw; */
+  padding: 2rem 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   text-align: right;
   border-radius: 10px;
-  margin: 2rem 2rem 7rem 0;
+  margin: 2rem 3rem 7rem 0;
 
   svg {
     margin: 2rem 0;

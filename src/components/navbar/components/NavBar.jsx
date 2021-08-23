@@ -3,8 +3,12 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { SideBar } from "./SideBar";
 import { motion } from "framer-motion";
+import { useSelector, useDispatch } from "react-redux";
 
 export const NavBar = ({ menuOpen, navItems, onMenuClick }) => {
+  const NavBtn = useSelector((state) => state.NavBtn);
+  const dispach = useDispatch();
+
   const handleScrollToTop = () => {
     window.scrollTo({
       behavior: "smooth",
@@ -13,6 +17,11 @@ export const NavBar = ({ menuOpen, navItems, onMenuClick }) => {
     });
   };
 
+  const handleDispach = () => {
+    console.log(NavBtn);
+    if (NavBtn === "ورود") return dispach({ type: "IN_LOGIN" });
+    return dispach({ type: "IN_HOME" });
+  };
   return (
     <>
       <Nav>
@@ -29,8 +38,8 @@ export const NavBar = ({ menuOpen, navItems, onMenuClick }) => {
                 </li>
               ))}
             </ul>
-            <button>
-              <Link to="/login">ورود</Link>
+            <button onClick={handleDispach}>
+              <Link to={`/${NavBtn === "ورود" ? "login" : ""}`}>{NavBtn}</Link>
             </button>
           </div>
           <div onClick={onMenuClick} className="humberger-menu">
@@ -38,7 +47,6 @@ export const NavBar = ({ menuOpen, navItems, onMenuClick }) => {
               animate={{
                 transition: {
                   durataion: 0.5,
-                  // type: "spring",
                 },
                 rotate: menuOpen ? -45 : 0,
                 top: menuOpen ? 8 : 0,
@@ -78,7 +86,7 @@ const Nav = styled.nav`
   background-color: #1b1b1b;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   /* shadow should change in the future */
   box-shadow: 0 0 4px 1px #5a5a5a;
   /* overflow-x: hidden; */
@@ -168,7 +176,7 @@ const Nav = styled.nav`
 
             &::after {
               content: "";
-              background-color: #49d49d;
+              background-color: #00ff08;
               left: 0;
               width: 100%;
               bottom: 0;
@@ -182,7 +190,7 @@ const Nav = styled.nav`
             }
 
             &.active {
-              border-bottom: 2px solid #49d49d;
+              border-bottom: 2px solid #00ff08;
             }
           }
         }
@@ -194,9 +202,9 @@ const Nav = styled.nav`
           border-radius: 30px;
           border: none;
           outline: none;
-          background-color: #49d49d;
+          background-color: transparent;
           font-family: vazir;
-          border: 1px solid #49d49d;
+          border: 1px solid #fff;
           cursor: pointer;
           transition: 0.2s ease all;
 
@@ -207,9 +215,7 @@ const Nav = styled.nav`
           }
 
           :hover {
-            border: 1px solid #49d49d;
-            color: white;
-            background-color: transparent;
+            border: 1px solid #00ff08;
           }
         }
       }
