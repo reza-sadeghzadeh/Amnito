@@ -24,10 +24,11 @@ const Div = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  /* width: 100vw; */
+  margin: 8rem 1rem 0 1rem;
+  border-radius: 20px;
   background-color: #111;
   /* height: 50vh; */
-  margin-top: 8rem;
   padding-top: 3rem;
 
   .holder {

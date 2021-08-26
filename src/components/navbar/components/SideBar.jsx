@@ -3,7 +3,11 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export function SideBar({ navItems, menuOpen }) {
+export function SideBar({ navItems, menuOpen, handleMenu }) {
+  const handleSideClose = () => {
+    handleMenu();
+  };
+
   return (
     <Side
       animate={{
@@ -20,14 +24,16 @@ export function SideBar({ navItems, menuOpen }) {
       <ul>
         {navItems.map((item) => (
           <li key={item.name}>
-            <Link key={item.name} to={item.path}>
+            <Link onClick={handleSideClose} key={item.name} to={item.path}>
               {item.name}
             </Link>
           </li>
         ))}
       </ul>
       <button>
-        <Link to="/services">خدمات</Link>
+        <Link onClick={handleSideClose} to="/login">
+          ورود
+        </Link>
       </button>
     </Side>
   );
@@ -48,7 +54,7 @@ const Side = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
 
     li {
       position: relative;

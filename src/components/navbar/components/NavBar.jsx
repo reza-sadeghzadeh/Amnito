@@ -5,7 +5,7 @@ import { SideBar } from "./SideBar";
 import { motion } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
 
-export const NavBar = ({ menuOpen, navItems, onMenuClick }) => {
+export const NavBar = ({ menuOpen, setmenuOpen, navItems, handleMenu }) => {
   const NavBtn = useSelector((state) => state.NavBtn);
   const dispach = useDispatch();
 
@@ -25,7 +25,11 @@ export const NavBar = ({ menuOpen, navItems, onMenuClick }) => {
   return (
     <>
       <Nav>
-        <SideBar menuOpen={menuOpen} navItems={navItems} />
+        <SideBar
+          handleMenu={handleMenu}
+          menuOpen={menuOpen}
+          navItems={navItems}
+        />
         <div className="container">
           <h1 onClick={handleScrollToTop}>امنیتو</h1>
           <div className="item-holder">
@@ -42,7 +46,7 @@ export const NavBar = ({ menuOpen, navItems, onMenuClick }) => {
               <Link to={`/${NavBtn === "ورود" ? "login" : ""}`}>{NavBtn}</Link>
             </button>
           </div>
-          <div onClick={onMenuClick} className="humberger-menu">
+          <div onClick={handleMenu} className="humberger-menu">
             <motion.div
               animate={{
                 transition: {
