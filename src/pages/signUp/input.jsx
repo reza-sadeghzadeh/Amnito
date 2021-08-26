@@ -54,10 +54,7 @@ const Div = styled.div`
     font-family: vazir;
     padding: 1.1rem 0;
   }
-  input[name="name"],
-  input[name="lastname"] {
-    font-family: vazir;
-  }
+
   input {
     width: 100%;
     padding: 0.6rem 1.5rem;

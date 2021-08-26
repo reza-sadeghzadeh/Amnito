@@ -1,16 +1,27 @@
 import React from "react";
 import styled from "styled-components";
+import Joi from "joi-browser";
 
 import Input from "./components/input";
 
 const Form = ({ history }) => {
+  const schema = {
+    username: Joi.string().min(3).max(50).required(),
+    password: Joi.string().min(8).max(50).required(),
+  };
   return (
     <Div className="form">
       <h1>ورود</h1>
       <div className="holder">
-        <Input name="username" id="username" placeholder=" نام کاربری " />
+        <Input
+          name="username"
+          schema={schema}
+          id="username"
+          placeholder=" نام کاربری "
+        />
         <Input
           name="password"
+          schema={schema}
           id="password"
           placeholder=" رمز عبور "
           type="password"

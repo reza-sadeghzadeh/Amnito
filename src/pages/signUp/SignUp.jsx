@@ -1,30 +1,74 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
-import Input from "../../components/form/components/input";
+import Input from "./input";
 import NameAndLastNameInput from "./nameAndLastNameInput";
 import image from "../../images/undraw_Setup_re_y9w8 (1).svg";
+import Joi from "joi-browser";
+import { toast } from "react-toastify";
 
-function SignUp() {
+function SignUp({ history }) {
+  const inpsHolder = useRef([]);
+  // let nameError, userNameError, passwordError, lastNameError;
+  // .messages({
+  //   "string.base": `فقط حروف مجاز است`,
+  //   "string.empty": `این قسمت ضروری است`,
+  //   "string.min": `حداقل باید 2 حرف باشد`,
+  //   "any.required": `این قسمت ضروری است`,
+  // }),
+
+  const schema = {
+    name: Joi.string().min(2).max(50).required(),
+    lastname: Joi.string().min(2).max(50).required(),
+    username: Joi.string().min(3).max(50).required(),
+    password: Joi.string().min(8).max(50).required(),
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let inputs = inpsHolder.current.querySelectorAll("input");
+    let inpPasses = inpsHolder.current.querySelectorAll(
+      "input[type='password']"
+    );
+    console.log(inpPasses);
+    if (inpPasses[0].value === inpPasses[1].value) {
+      let data = {};
+      inputs.forEach((inp) => {
+        data = { ...data, [inp.name]: inp.value };
+      });
+      let { error } = Joi.validate(data, schema);
+      if (error) toast.error(error.message);
+      else console.log(history.push("/"));
+    } else {
+      toast.error("رمز عبورها باید برابر باشند");
+    }
+  };
   return (
-    <Div className="form">
+    <Div ref={inpsHolder} className="form">
       <div className="holder">
         <h1>ثبت نام</h1>
-        <NameAndLastNameInput />
+        <NameAndLastNameInput schema={schema} />
         <form>
-          <Input name="user-name" id="username" placeholder="نام کاربری" />
+          <Input
+            name="username"
+            schema={schema}
+            id="username"
+            placeholder="نام کاربری"
+          />
           <Input
             name="password"
+            schema={schema}
             id="password"
             placeholder="رمزعبور"
             type="password"
           />
           <Input
             name="password"
-            id="password"
+            id="repeat-password"
+            schema={schema}
             placeholder="تکرار رمزعبور"
             type="password"
           />
-          <button className="btn">ثبت نام</button>
+          <button onClick={(e) => handleSubmit(e)}>ثبت نام</button>
         </form>
       </div>
       <img src={image} alt="sign up image" />
@@ -54,6 +98,15 @@ const Div = styled.div`
         color: black;
         margin: 3rem 0;
         padding: 1rem 2rem;
+        background-color: transparent;
+        border: 1px solid #00ff08;
+        border-radius: 10px;
+        cursor: pointer;
+
+        :disabled {
+          cursor: not-allowed;
+          border: 1px solid gray;
+        }
       }
     }
   }

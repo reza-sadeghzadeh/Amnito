@@ -1,12 +1,17 @@
 import React from "react";
-import Input from "../../components/form/components/input";
+import Input from "./input";
 import styled from "styled-components";
 
-function NameAndLastNameInput() {
+function NameAndLastNameInput({ schema }) {
   return (
     <Div>
-      <Input id="name" placeholder="نام خانوادگی" name="lastname" />
-      <Input id="name" placeholder="نام" name="name" />
+      <Input schema={schema} id="name" placeholder="نام" name="name" />
+      <Input
+        schema={schema}
+        id="lastname"
+        placeholder="نام خانوادگی"
+        name="lastname"
+      />
     </Div>
   );
 }

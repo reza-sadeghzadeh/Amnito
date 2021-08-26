@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TestimonialCom from "./components/TestimonialCom";
 import { useAnimation } from "framer-motion";
 import image1 from "../../images/85053105-82ca-49c9-8974-d3067829baab.jpg";
